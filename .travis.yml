@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker build . -f Dockerfile -t katchvidal/nextjs
+  - docker build . -f Dockerfile.dev -t katchvidal/nextjs
 
 #script:
 #  - docker run -t katchvidal/nextjs
