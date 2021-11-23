@@ -8,8 +8,8 @@ services:
 before_install:
   - docker build . -f Dockerfile -t katchvidal/nextjs
 
-script:
-  - docker run -t katchvidal/nextjs
+#script:
+#  - docker run -t katchvidal/nextjs
 
 deploy:
   provider: elasticbeanstalk
