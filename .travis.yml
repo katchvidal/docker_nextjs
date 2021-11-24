@@ -13,7 +13,8 @@ services:
 
 after_succes:
   - docker build . Dockerfile -t katchvidal/nextjs
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stind
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push katchvidal/nextjs
 
 deploy:
   provider: elasticbeanstalk
