@@ -1,15 +1,19 @@
-sudo: required
+#sudo: required
 
-#language: node_js
+language: generic
 
 services:
   - docker
 
-before_install:
-  - docker build . -f Dockerfile.dev -t katchvidal/nextjs
+#before_install:
+#  - docker build Dockerfile.dev -t katchvidal/nextjs
 
 #script:
 #  - docker run -t katchvidal/nextjs
+
+after_succes:
+  - docker build . Dockerfile -t katchvidal/nextjs
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stind
 
 deploy:
   provider: elasticbeanstalk
