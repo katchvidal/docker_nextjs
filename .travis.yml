@@ -12,7 +12,7 @@ services:
 #  - docker run -t katchvidal/nextjs
 
 after_succes:
-  - docker build . -f Dockerfile.prod -t katchvidal/nextjs
+  - docker build . -f Dockerfile.dev -t katchvidal/nextjs
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push katchvidal/nextjs
 
